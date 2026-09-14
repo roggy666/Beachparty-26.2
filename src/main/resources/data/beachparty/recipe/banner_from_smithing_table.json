@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smithing_transform",
+  "template": "minecraft:netherite_upgrade_smithing_template",
+  "base": "beachparty:beachparty_banner",
+  "addition": "minecraft:netherite_ingot",
+  "result": {
+    "id": "beachparty:beachparty_banner",
+    "count": 2
+  }
+}

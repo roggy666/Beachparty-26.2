@@ -1,0 +1,12 @@
+{
+  "layers": {
+    "humanoid_leggings": [
+      {
+        "texture": "beachparty:trunks",
+        "dyeable": {
+          "color_when_undyed": 16715535
+        }
+      }
+    ]
+  }
+}

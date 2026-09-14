@@ -1,0 +1,12 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "beachparty:rubber_ring_blue"
+      },
+      {
+        "texture": "beachparty:rubber_ring_blue_overlay"
+      }
+    ]
+  }
+}

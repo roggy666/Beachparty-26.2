@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#",
+    "A",
+    "O"
+  ],
+  "key": {
+    "#": "#minecraft:wool",
+    "A": "minecraft:stick",
+    "O": "beachparty:palm_planks"
+  },
+  "result": {
+    "id": "beachparty:palm_bar_stool",
+    "count": 2
+  }
+}

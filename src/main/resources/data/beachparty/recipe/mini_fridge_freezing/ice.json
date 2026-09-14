@@ -1,0 +1,11 @@
+{
+  "type": "beachparty:mini_fridge_freezing",
+  "ingredients": [
+    "minecraft:potion"
+  ],
+  "result": {
+    "id": "minecraft:ice",
+    "count": 1
+  },
+  "crafting_time": 1200
+}

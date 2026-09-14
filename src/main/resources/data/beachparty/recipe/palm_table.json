@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "SSS",
+    "X X",
+    "B B"
+  ],
+  "key": {
+    "S": "beachparty:palm_slab",
+    "X": "beachparty:palm_planks",
+    "B": "minecraft:stick"
+  },
+  "result": {
+    "id": "beachparty:palm_table",
+    "count": 2
+  }
+}

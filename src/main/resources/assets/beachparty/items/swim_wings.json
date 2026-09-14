@@ -1,0 +1,12 @@
+{
+  "model": {
+    "type": "minecraft:model",
+    "model": "beachparty:item/swim_wings",
+    "tints": [
+      {
+        "type": "minecraft:dye",
+        "default": -43008
+      }
+    ]
+  }
+}

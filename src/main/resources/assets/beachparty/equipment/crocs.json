@@ -1,0 +1,12 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "beachparty:crocs",
+        "dyeable": {
+          "color_when_undyed": 1048335
+        }
+      }
+    ]
+  }
+}

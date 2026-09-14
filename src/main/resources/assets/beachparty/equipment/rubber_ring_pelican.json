@@ -1,0 +1,12 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "beachparty:rubber_ring_pelican"
+      },
+      {
+        "texture": "beachparty:rubber_ring_pelican_overlay"
+      }
+    ]
+  }
+}

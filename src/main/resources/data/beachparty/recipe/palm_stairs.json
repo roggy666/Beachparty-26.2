@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "stairs",
+  "pattern": [
+    "#  ",
+    "## ",
+    "###"
+  ],
+  "key": {
+    "#": "beachparty:palm_planks"
+  },
+  "result": {
+    "id": "beachparty:palm_stairs",
+    "count": 4
+  }
+}

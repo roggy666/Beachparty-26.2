@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#V ",
+    "V# "
+  ],
+  "key": {
+    "#": "beachparty:palm_planks",
+    "V": "beachparty:palm_slab"
+  },
+  "result": {
+    "id": "beachparty:palm_floorboard"
+  }
+}

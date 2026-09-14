@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "wood",
+  "pattern": [
+    "##",
+    "##"
+  ],
+  "key": {
+    "#": "beachparty:palm_log"
+  },
+  "result": {
+    "id": "beachparty:palm_wood",
+    "count": 3
+  }
+}

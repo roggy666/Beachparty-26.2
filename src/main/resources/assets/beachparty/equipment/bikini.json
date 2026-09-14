@@ -1,0 +1,15 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "beachparty:bikini",
+        "dyeable": {
+          "color_when_undyed": 987135
+        }
+      },
+      {
+        "texture": "beachparty:bikini_overlay"
+      }
+    ]
+  }
+}

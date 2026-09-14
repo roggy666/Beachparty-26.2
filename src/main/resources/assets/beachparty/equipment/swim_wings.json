@@ -1,0 +1,15 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "beachparty:swim_wings",
+        "dyeable": {
+          "color_when_undyed": 16734208
+        }
+      },
+      {
+        "texture": "beachparty:swim_wings_overlay"
+      }
+    ]
+  }
+}

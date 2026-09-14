@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#J#"
+  ],
+  "key": {
+    "#": "minecraft:note_block",
+    "J": "beachparty:overgrown_disc"
+  },
+  "result": {
+    "id": "beachparty:radio",
+    "count": 1
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "type": "beachparty:palm_bar_mixing",
+  "ingredients": [
+    "beachparty:coconut_open",
+    "minecraft:ice",
+    "minecraft:honey_bottle"
+  ],
+  "result": {
+    "id": "beachparty:coconut_cocktail"
+  }
+}

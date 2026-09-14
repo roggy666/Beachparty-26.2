@@ -1,0 +1,12 @@
+{
+  "type": "beachparty:palm_bar_mixing",
+  "ingredients": [
+    "minecraft:pumpkin",
+    "minecraft:ice",
+    "minecraft:sugar",
+    "minecraft:milk_bucket"
+  ],
+  "result": {
+    "id": "beachparty:pumpkin_cocktail"
+  }
+}

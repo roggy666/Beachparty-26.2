@@ -1,0 +1,11 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    "#beachparty:palm_logs"
+  ],
+  "result": {
+    "id": "beachparty:palm_planks",
+    "count": 4
+  }
+}

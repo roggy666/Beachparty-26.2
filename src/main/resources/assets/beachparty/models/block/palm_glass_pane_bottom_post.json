@@ -1,0 +1,45 @@
+{
+  "credit": "Made by Satisfy",
+  "ambientocclusion": false,
+  "textures": {
+    "edge": {
+      "force_translucent": true,
+      "sprite": "beachparty:block/palm_glass_pane_top"
+    },
+    "particle": "beachparty:block/palm_glass_pane_bottom"
+  },
+  "elements": [
+    {
+      "from": [
+        7,
+        0,
+        7
+      ],
+      "to": [
+        9,
+        16,
+        9
+      ],
+      "faces": {
+        "up": {
+          "uv": [
+            7,
+            7,
+            9,
+            9
+          ],
+          "texture": "#edge"
+        },
+        "down": {
+          "uv": [
+            7,
+            7,
+            9,
+            9
+          ],
+          "texture": "#edge"
+        }
+      }
+    }
+  ]
+}
