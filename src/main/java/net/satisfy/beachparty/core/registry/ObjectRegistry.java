@@ -65,6 +65,7 @@ public class ObjectRegistry {
     public static final Block THATCH_SLAB = registerWithItem("thatch_slab", SlabBlock::new, BlockBehaviour.Properties.ofFullCopy(Blocks.HAY_BLOCK));
     public static final Block PALM_LEAVES = registerWithItem("palm_leaves", PalmLeavesBlock::new, (block, p) -> new BlockItem(block, p.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM)), BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_LEAVES));
     public static final SaplingBlock PALM_SPROUT = registerWithItem("palm_sprout", PalmSproutBlock::new, (block, p) -> new BlockItem(block, p.compostable(ContextIntProviders.COMPOSTABLE_MEDIUM)), PalmSproutBlock.sproutProperties());
+    public static final Block POTTED_PALM_SPROUT = registerWithoutItem("potted_palm_sprout", p -> new FlowerPotBlock(PALM_SPROUT, p), BlockBehaviour.Properties.ofFullCopy(Blocks.POTTED_ACACIA_SAPLING));
     public static final Block STRIPPED_PALM_LOG = registerWithItem("stripped_palm_log", RotatedPillarBlock::new, logProperties());
     public static final Block STRIPPED_PALM_WOOD = registerWithItem("stripped_palm_wood", RotatedPillarBlock::new, logProperties());
     public static final Block PALM_LOG = registerWithItem("palm_log", RotatedPillarBlock::new, logProperties());

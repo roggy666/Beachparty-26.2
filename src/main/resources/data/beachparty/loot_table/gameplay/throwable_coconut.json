@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:gift",
+  "pools": [
+    {
+      "rolls": 2.0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "beachparty:coconut_open"
+        }
+      ]
+    },
+    {
+      "rolls": 1.0,
+      "condition": {
+        "type": "minecraft:random_chance",
+        "chance": 0.45
+      },
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "beachparty:palm_sprout"
+        }
+      ]
+    }
+  ]
+}

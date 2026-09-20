@@ -1,6 +1,13 @@
 package net.satisfy.beachparty.core.entity;
 
 import net.minecraft.core.particles.ItemParticleOption;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.storage.loot.LootParams;
+import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.parameters.LootContextParams;
+import net.satisfy.beachparty.core.util.BeachpartyIdentifier;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -19,6 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import net.minecraft.server.level.ServerLevel;
 
 public class ThrowableCoconutEntity extends ThrowableItemProjectile {
+    private static final ResourceKey<LootTable> DROPS = ResourceKey.create(Registries.LOOT_TABLE, BeachpartyIdentifier.identifier("gameplay/throwable_coconut"));
 
     public ThrowableCoconutEntity(Level world, LivingEntity owner) {
         super(EntityTypeRegistry.COCONUT, owner, world, new ItemStack(ObjectRegistry.COCONUT));
@@ -69,11 +77,12 @@ public class ThrowableCoconutEntity extends ThrowableItemProjectile {
         if (level instanceof ServerLevel serverLevel) {
             level.broadcastEntityEvent(this, (byte) 3);
             this.playSound(SoundEvents.WOOD_FALL, 1.0F, 1.0F);
-            this.spawnAtLocation(serverLevel, ObjectRegistry.COCONUT_OPEN);
-            this.spawnAtLocation(serverLevel, ObjectRegistry.COCONUT_OPEN);
-            if (level.getRandom().nextFloat() < 0.45F) {
-                this.spawnAtLocation(serverLevel, ObjectRegistry.PALM_SPROUT);
-            }
+            LootParams lootParams = new LootParams.Builder(serverLevel)
+                    .withParameter(LootContextParams.THIS_ENTITY, this)
+                    .withParameter(LootContextParams.ORIGIN, this.position())
+                    .create(LootContextParamSets.GIFT);
+            LootTable lootTable = serverLevel.getServer().reloadableRegistries().getLootTable(DROPS);
+            lootTable.getRandomItems(lootParams).forEach(stack -> this.spawnAtLocation(serverLevel, stack));
             this.discard();
         }
     }

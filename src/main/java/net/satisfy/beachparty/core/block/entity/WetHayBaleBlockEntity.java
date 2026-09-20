@@ -11,6 +11,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.TagKey;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.attribute.EnvironmentAttributes;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.biome.Biome;
 import net.minecraft.world.level.block.Blocks;
@@ -33,6 +34,10 @@ public class WetHayBaleBlockEntity extends BlockEntity {
     public static void tick(ServerLevel level, BlockPos pos, BlockState state, WetHayBaleBlockEntity be) {
         if (be.isProtected) {
             level.scheduleTick(pos, state.getBlock(), 1);
+            return;
+        }
+        if (level.environmentAttributes().getValue(EnvironmentAttributes.WATER_EVAPORATES, pos)) {
+            level.setBlock(pos, ObjectRegistry.THATCH.defaultBlockState(), 3);
             return;
         }
         if (!level.canSeeSky(pos.above()) || level.getFluidState(pos).is(net.minecraft.world.level.material.Fluids.WATER)) {

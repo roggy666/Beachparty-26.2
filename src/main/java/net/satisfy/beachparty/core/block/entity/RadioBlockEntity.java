@@ -1,19 +1,19 @@
 package net.satisfy.beachparty.core.block.entity;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.world.level.storage.ValueInput;
 import net.minecraft.world.level.storage.ValueOutput;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.server.level.ServerLevel;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.JukeboxSong;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.gameevent.GameEvent.Context;
-import net.satisfy.beachparty.core.registry.ObjectRegistry;
 import net.satisfy.beachparty.core.registry.SoundEventRegistry;
 
 import java.util.List;
@@ -99,8 +99,8 @@ public class RadioBlockEntity extends BlockEntity {
         ticks = 0;
         startTick = server.getGameTime();
 
-        Item recordItem = getRecordItemForCurrentTrack();
-        int id = Item.getId(recordItem);
+        int id = getJukeboxSongId(server);
+        if (id < 0) return;
 
         server.levelEvent(null, 1010, worldPosition, id);
         server.gameEvent(GameEvent.JUKEBOX_PLAY, worldPosition, Context.of(getBlockState()));
@@ -108,20 +108,17 @@ public class RadioBlockEntity extends BlockEntity {
     }
 
     private void resendSoundToClient(ServerLevel server) {
-        Item recordItem = getRecordItemForCurrentTrack();
-        int id = Item.getId(recordItem);
+        int id = getJukeboxSongId(server);
+        if (id < 0) return;
         server.levelEvent(null, 1010, worldPosition, id);
     }
 
-    private Item getRecordItemForCurrentTrack() {
-        return switch (currentIndex) {
-            case 0 -> ObjectRegistry.MUSIC_DISC_BEACHPARTY;
-            case 1 -> ObjectRegistry.MUSIC_DISC_CARIBBEAN_BEACH;
-            case 2 -> ObjectRegistry.MUSIC_DISC_PRIDELANDS;
-            case 3 -> ObjectRegistry.MUSIC_DISC_VOCALISTA;
-            case 4 -> ObjectRegistry.MUSIC_DISC_WILD_VEINS;
-            default -> ObjectRegistry.OVERGROWN_DISC;
-        };
+    /** Level event 1010 carries the registry id of the jukebox song, which is what the client resolves. */
+    private int getJukeboxSongId(ServerLevel server) {
+        if (currentIndex < 0 || currentIndex >= TRACKS.size()) return -1;
+        Registry<JukeboxSong> registry = server.registryAccess().lookupOrThrow(Registries.JUKEBOX_SONG);
+        JukeboxSong song = registry.getValue(TRACKS.get(currentIndex));
+        return song == null ? -1 : registry.getId(song);
     }
 
     @Override

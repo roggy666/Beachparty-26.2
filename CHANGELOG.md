@@ -1,3 +1,21 @@
+[2.1.5]
+
+**Added**
+* zh_tw translation (thanks to CherryPuff)
+* Palm Sprouts can now be placed in Flower Pots
+* Wet Hay Bale now instantly dries into Thatch in the Nether, matching Vanilla's Sponge drying behavior
+
+**Fixed**
+* Radio not playing any music: it broadcast the record item's registry id instead of the Jukebox Song's registry id, so the client could never resolve a matching track
+
+**Changed**
+* Updated zh_cn translation (thanks to Number_Sir)
+* Fixed and updated the Italian translation (thanks to Serena)
+* Refined Portuguese (pt_br) translations (thanks to Leirbag)
+* Throwable Coconut drops (Open Coconuts / chance for a Palm Sprout) are now driven by a datapack-editable loot table (`beachparty:gameplay/throwable_coconut`) instead of being hardcoded
+
+***
+
 [2.1.4]
 
 **Fixed**
