@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "beachparty:mini_fridge"
+        "recipes": "beachparty:mini_fridge"
       }
     }
   },

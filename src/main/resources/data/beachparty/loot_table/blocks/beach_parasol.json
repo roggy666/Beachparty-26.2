@@ -3,23 +3,19 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "block": "beachparty:beach_parasol",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "half": "upper"
-              }
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "beachparty:beach_parasol",
+            "state": {
+              "half": "upper"
             }
-          ],
+          },
           "name": "beachparty:beach_parasol"
         }
       ],

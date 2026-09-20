@@ -86,7 +86,7 @@ public class BeachTowelBlock extends BedBlock {
                 }
 
             } else {
-                player.startSleepInBed(blockPos).ifLeft((failureReason) -> {
+                player.startSleepInBed(this, blockState, this.getBedRule(level, blockPos), blockPos).ifLeft((failureReason) -> {
                     if (failureReason.message() != null) {
                         player.sendOverlayMessage(failureReason.message());
                     }

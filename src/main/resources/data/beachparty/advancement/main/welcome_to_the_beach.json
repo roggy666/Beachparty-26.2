@@ -18,17 +18,15 @@
   "criteria": {
     "enter_beach": {
       "conditions": {
-        "player": [
-          {
-            "condition": "minecraft:entity_properties",
-            "entity": "this",
-            "predicate": {
-              "location": {
-                "biome": "minecraft:beach"
-              }
+        "player": {
+          "type": "minecraft:entity_properties",
+          "entity": "this",
+          "predicate": {
+            "location": {
+              "biome": "minecraft:beach"
             }
           }
-        ]
+        }
       },
       "trigger": "minecraft:location"
     }

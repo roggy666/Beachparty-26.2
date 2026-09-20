@@ -7,7 +7,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.util.RandomSource;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.world.level.WorldGenLevel;
-import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
+import net.minecraft.world.level.levelgen.feature.TreeFeature;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacerType;
 import net.satisfy.beachparty.core.block.HangingCoconutBlock;
@@ -22,7 +22,7 @@ public class PalmFoliagePlacer extends FoliagePlacer {
         super(pRadius, pOffset);
     }
 
-    private static void createQuadrant(Direction direction, BlockPos startingPos, WorldGenLevel pLevel, FoliagePlacer.FoliageSetter foliageSetter, RandomSource pRandom, TreeConfiguration pConfig) {
+    private static void createQuadrant(Direction direction, BlockPos startingPos, WorldGenLevel pLevel, FoliagePlacer.FoliageSetter foliageSetter, RandomSource pRandom, TreeFeature pConfig) {
         BlockPos.MutableBlockPos pos = startingPos.mutable();
 
         pos.move(direction);
@@ -65,7 +65,7 @@ public class PalmFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    protected void createFoliage(WorldGenLevel pLevel, FoliageSetter foliageSetter, RandomSource pRandom, TreeConfiguration pConfig, int i, FoliageAttachment pAttachment, int j, int k, int l) {
+    protected void createFoliage(WorldGenLevel pLevel, FoliageSetter foliageSetter, RandomSource pRandom, TreeFeature pConfig, int i, FoliageAttachment pAttachment, int j, int k, int l) {
         BlockPos startingPos = pAttachment.pos();
 
         tryPlaceLeaf(pLevel, foliageSetter, pRandom, pConfig, startingPos);
@@ -77,7 +77,7 @@ public class PalmFoliagePlacer extends FoliagePlacer {
     }
 
     @Override
-    public int foliageHeight(RandomSource pRandom, int pHeight, TreeConfiguration pConfig) {
+    public int foliageHeight(RandomSource pRandom, int pHeight, TreeFeature pConfig) {
         return 0;
     }
 

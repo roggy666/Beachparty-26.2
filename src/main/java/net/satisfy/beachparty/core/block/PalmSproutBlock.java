@@ -1,5 +1,6 @@
 package net.satisfy.beachparty.core.block;
 
+import net.minecraft.util.random.WeightedList;
 import net.minecraft.core.BlockPos;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.level.BlockGetter;
@@ -16,14 +17,14 @@ import net.satisfy.beachparty.core.world.ConfiguredFeatures;
 import java.util.Optional;
 
 public class PalmSproutBlock extends SaplingBlock {
-    private static final TreeGrower PALM = new TreeGrower("palm", Optional.empty(), Optional.of(ConfiguredFeatures.PALM_TREE_KEY), Optional.empty());
+    private static final TreeGrower PALM = new TreeGrower("palm", WeightedList.of(ConfiguredFeatures.PALM_TREE_KEY), WeightedList.of(), WeightedList.of(), null);
 
     public PalmSproutBlock(BlockBehaviour.Properties properties) {
         super(PALM, properties);
     }
 
     public static BlockBehaviour.Properties sproutProperties() {
-        return BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_SAPLING).mapColor(MapColor.PLANT).noCollision().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.DESTROY);
+        return BlockBehaviour.Properties.ofFullCopy(Blocks.ACACIA_SAPLING).mapColor(MapColor.PLANT).noCollision().randomTicks().instabreak().sound(SoundType.GRASS).pushReaction(PushReaction.POPPED);
     }
 
     @Override

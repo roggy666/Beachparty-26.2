@@ -7,30 +7,31 @@
         {
           "type": "minecraft:item",
           "name": "beachparty:coconut_cocktail",
-          "functions": [
-            {
-              "function": "minecraft:set_components",
-              "components": {
-                "minecraft:custom_data": {
-                  "stage": 3
-                }
+          "modifier": {
+            "type": "minecraft:set_components",
+            "components": {
+              "minecraft:custom_data": {
+                "stage": 3
               }
             }
-          ]
-        }
-      ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        },
-        {
-          "condition": "minecraft:block_state_property",
-          "block": "beachparty:coconut_cocktail",
-          "properties": {
-            "stage": "3"
           }
         }
-      ]
+      ],
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:survives_explosion"
+          },
+          {
+            "type": "minecraft:match_block",
+            "blocks": "beachparty:coconut_cocktail",
+            "state": {
+              "stage": "3"
+            }
+          }
+        ]
+      }
     }
   ]
 }

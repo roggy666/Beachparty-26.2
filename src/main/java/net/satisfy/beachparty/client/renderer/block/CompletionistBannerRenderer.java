@@ -83,21 +83,21 @@ public class CompletionistBannerRenderer implements BlockEntityRenderer<Completi
         poseStack.pushPose();
         if (state.wall) {
             poseStack.translate(0.5, -0.1666666716337204, 0.5);
-            poseStack.mulPose(Axis.YP.rotationDegrees(state.rotation));
+            poseStack.rotateDegrees(Axis.YP, state.rotation);
             poseStack.translate(0.0, -0.3125, -0.4375);
         } else {
             poseStack.translate(0.5, 0.5, 0.5);
-            poseStack.mulPose(Axis.YP.rotationDegrees(state.rotation));
+            poseStack.rotateDegrees(Axis.YP, state.rotation);
         }
         poseStack.scale(SCALE, -SCALE, -SCALE);
 
         int light = state.lightCoords;
         int overlay = OverlayTexture.NO_OVERLAY;
         if (!state.wall) {
-            collector.submitModel(this.pole, Unit.INSTANCE, poseStack, light, overlay, -1, Sheets.BANNER_BASE, this.sprites, 0, state.breakProgress);
+            collector.submitModel(this.pole, Unit.INSTANCE, poseStack, light, overlay, -1, Sheets.BANNER_BASE, this.sprites, 0);
         }
-        collector.submitModel(this.bar, Unit.INSTANCE, poseStack, light, overlay, -1, Sheets.BANNER_BASE, this.sprites, 0, state.breakProgress);
-        collector.submitModel(this.flag, state.phase, poseStack, state.texture, light, overlay, 0, state.breakProgress);
+        collector.submitModel(this.bar, Unit.INSTANCE, poseStack, light, overlay, -1, Sheets.BANNER_BASE, this.sprites, 0);
+        collector.submitModel(this.flag, state.phase, poseStack, state.texture, light, overlay, 0);
         poseStack.popPose();
     }
 

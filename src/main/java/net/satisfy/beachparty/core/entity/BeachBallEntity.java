@@ -1,5 +1,6 @@
 package net.satisfy.beachparty.core.entity;
 
+import net.minecraft.util.Prediction;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.sounds.SoundEvents;
@@ -125,7 +126,7 @@ public class BeachBallEntity extends Mob {
                 this.discard();
                 ItemStack beachBallItem = new ItemStack(ObjectRegistry.BEACH_BALL);
                 if (!player.getInventory().add(beachBallItem)) {
-                    player.drop(beachBallItem, false);
+                    player.drop(beachBallItem, false, Prediction.SERVER_ONLY);
                 }
             } else {
                 float pitch = 0.8F + this.level().getRandom().nextFloat() * 0.4F;

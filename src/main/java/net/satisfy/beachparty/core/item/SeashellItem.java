@@ -36,7 +36,7 @@ public class SeashellItem extends BlockItem {
     public @NotNull InteractionResult use(@NotNull Level world, @NotNull Player player, @NotNull InteractionHand hand) {
         InteractionResult resultHolder = super.use(world, player, hand);
         ItemStack stack = player.getItemInHand(hand);
-        player.swing(hand);
+        player.swing(hand, stack.getInteractAnimation(), true);
         if (!world.isClientSide()) {
             world.playSound(player, player.blockPosition().above(),
                     SoundEvents.ITEM_FRAME_REMOVE_ITEM, SoundSource.PLAYERS, 1, 1);

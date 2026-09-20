@@ -1,5 +1,6 @@
 package net.satisfy.beachparty.core.block;
 
+import net.minecraft.world.level.block.BonemealSource;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -47,10 +48,6 @@ public class HangingCoconutBlock extends FallingBlock implements BonemealableBlo
         this.registerDefaultState(this.getStateDefinition().any().setValue(AGE, 0));
     }
 
-    @Override
-    protected MapCodec<? extends FallingBlock> codec() {
-        return null;
-    }
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
@@ -102,17 +99,17 @@ public class HangingCoconutBlock extends FallingBlock implements BonemealableBlo
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState) {
+    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, BonemealSource source) {
         return blockState.getValue(AGE) < 2;
     }
 
     @Override
-    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
+    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
         return true;
     }
 
     @Override
-    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
+    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
         level.setBlock(pos, state.setValue(AGE, state.getValue(AGE) + 1), 2);
     }
 

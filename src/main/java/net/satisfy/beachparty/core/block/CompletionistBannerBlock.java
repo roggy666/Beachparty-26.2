@@ -46,12 +46,7 @@ public class CompletionistBannerBlock extends BaseEntityBlock {
         makeDefaultState();
     }
 
-    public static final MapCodec<CompletionistBannerBlock> CODEC = simpleCodec(CompletionistBannerBlock::new);
 
-    @Override
-    protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
-    }
 
     @Nullable
     @Override

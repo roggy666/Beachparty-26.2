@@ -53,12 +53,7 @@ public class PalmBarBlock extends BaseEntityBlock implements EntityBlock {
         super(settings);
     }
 
-    public static final MapCodec<PalmBarBlock> CODEC = simpleCodec(PalmBarBlock::new);
 
-    @Override
-    protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
-    }
 
     @Override
     public @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {

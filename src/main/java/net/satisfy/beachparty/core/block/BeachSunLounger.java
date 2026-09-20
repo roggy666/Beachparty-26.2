@@ -231,7 +231,7 @@ public class BeachSunLounger extends BedBlock {
 
         if (!blockState.getValue(DOWN)) return InteractionResult.CONSUME;
 
-        if (level.environmentAttributes().getValue(EnvironmentAttributes.BED_RULE, blockPos).explodes()) {
+        if (this.getBedRule(level, blockPos).destroyOnUse()) {
             level.removeBlock(blockPos, false);
             BlockPos blockPos2 = blockPos.relative(blockState.getValue(FACING).getOpposite());
             if (level.getBlockState(blockPos2).is(this)) level.removeBlock(blockPos2, false);
@@ -251,7 +251,7 @@ public class BeachSunLounger extends BedBlock {
         final BlockState finalBlockState = blockState;
         final BlockPos finalBlockPos = blockPos;
 
-        player.startSleepInBed(finalBlockPos)
+        player.startSleepInBed(this, finalBlockState, this.getBedRule(level, finalBlockPos), finalBlockPos)
                 .ifRight(success -> level.setBlock(finalBlockPos, finalBlockState.setValue(OCCUPIED, true), Block.UPDATE_ALL))
                 .ifLeft(bedSleepingProblem -> {
                     if (bedSleepingProblem.message() != null) {

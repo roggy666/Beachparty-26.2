@@ -2,7 +2,8 @@
   "credit": "Made by Satisfy",
   "parent": "block/thin_block",
   "textures": {
-    "1": "beachparty:block/palm_planks"
+    "1": "beachparty:block/palm_planks",
+    "particle": "#1"
   },
   "elements": [
     {

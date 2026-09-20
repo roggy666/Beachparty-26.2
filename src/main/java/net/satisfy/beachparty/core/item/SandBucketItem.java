@@ -1,5 +1,6 @@
 package net.satisfy.beachparty.core.item;
 
+import net.minecraft.util.Prediction;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.component.DataComponents;
@@ -93,11 +94,11 @@ public class SandBucketItem extends BlockItem {
         handStack.shrink(1);
         if (player.getInventory().getItem(slot).isEmpty()) {
             if (!inventory.add(slot, returnStack)) {
-                player.drop(returnStack, false);
+                player.drop(returnStack, false, Prediction.PREDICTED);
             }
         } else {
             if (!inventory.add(returnStack)) {
-                player.drop(returnStack, false);
+                player.drop(returnStack, false, Prediction.PREDICTED);
             }
         }
         return possibleReturnStack;

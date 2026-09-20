@@ -117,12 +117,7 @@ public class BeachGoalBlock extends BaseEntityBlock {
         this.registerDefaultState(this.stateDefinition.any().setValue(PART, Part.BOTTOM_LEFT).setValue(FACING, Direction.NORTH));
     }
 
-    public static final MapCodec<BeachGoalBlock> CODEC = simpleCodec(BeachGoalBlock::new);
 
-    @Override
-    protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
-    }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

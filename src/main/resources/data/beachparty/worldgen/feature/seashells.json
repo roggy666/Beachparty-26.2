@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:simple_block",
+  "to_place": {
+    "id": "beachparty:seashell_block",
+    "properties": {
+      "half": "lower"
+    }
+  }
+}

@@ -9,18 +9,21 @@
           "name": "beachparty:hooded_beach_chair"
         }
       ],
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        },
-        {
-          "condition": "minecraft:block_state_property",
-          "block": "beachparty:hooded_beach_chair",
-          "properties": {
-            "half": "lower"
+      "condition": {
+        "type": "minecraft:all_of",
+        "terms": [
+          {
+            "type": "minecraft:survives_explosion"
+          },
+          {
+            "type": "minecraft:match_block",
+            "blocks": "beachparty:hooded_beach_chair",
+            "state": {
+              "half": "lower"
+            }
           }
-        }
-      ]
+        ]
+      }
     }
   ]
 }

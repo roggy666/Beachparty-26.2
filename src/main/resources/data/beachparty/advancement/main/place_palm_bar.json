@@ -3,12 +3,10 @@
   "criteria": {
     "place_palm_bar": {
       "conditions": {
-        "location": [
-          {
-            "block": "beachparty:palm_bar",
-            "condition": "minecraft:block_state_property"
-          }
-        ]
+        "location": {
+          "type": "minecraft:match_block",
+          "blocks": "beachparty:palm_bar"
+        }
       },
       "trigger": "minecraft:placed_block"
     }

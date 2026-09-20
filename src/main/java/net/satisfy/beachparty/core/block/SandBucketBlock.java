@@ -1,5 +1,6 @@
 package net.satisfy.beachparty.core.block;
 
+import net.minecraft.util.Prediction;
 import com.mojang.serialization.MapCodec;
 import net.minecraft.util.Util;
 import net.minecraft.core.BlockPos;
@@ -64,12 +65,7 @@ public class SandBucketBlock extends HorizontalDirectionalBlock {
         super(settings);
     }
 
-    public static final MapCodec<SandBucketBlock> CODEC = simpleCodec(SandBucketBlock::new);
 
-    @Override
-    protected @NotNull MapCodec<? extends HorizontalDirectionalBlock> codec() {
-        return CODEC;
-    }
 
     @Override
     public @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
@@ -249,11 +245,11 @@ public class SandBucketBlock extends HorizontalDirectionalBlock {
             handStack.shrink(1);
             if (player.getInventory().getItem(slot).isEmpty()) {
                 if (!inventory.add(slot, returnStack)) {
-                    player.drop(returnStack, false);
+                    player.drop(returnStack, false, Prediction.PREDICTED);
                 }
             } else {
                 if (!inventory.add(returnStack)) {
-                    player.drop(returnStack, false);
+                    player.drop(returnStack, false, Prediction.PREDICTED);
                 }
             }
         }

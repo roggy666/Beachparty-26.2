@@ -45,7 +45,7 @@ public class CommonEvents {
             String name = path.substring("chests/".length());
             if (INJECTED_CHESTS.contains(name)) {
                 ResourceKey<LootTable> extra = ResourceKey.create(Registries.LOOT_TABLE, BeachpartyIdentifier.identifier("chests/" + name));
-                tableBuilder.withPool(LootPool.lootPool().add(NestedLootTable.lootTableReference(extra)));
+                tableBuilder.withPool(LootPool.lootPool().add(NestedLootTable.lootTableReference(registries.lookupOrThrow(Registries.LOOT_TABLE).getOrThrow(extra))));
             }
         });
 

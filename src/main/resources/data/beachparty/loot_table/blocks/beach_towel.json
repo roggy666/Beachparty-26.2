@@ -3,23 +3,19 @@
   "pools": [
     {
       "bonus_rolls": 0.0,
-      "conditions": [
-        {
-          "condition": "minecraft:survives_explosion"
-        }
-      ],
+      "condition": {
+        "type": "minecraft:survives_explosion"
+      },
       "entries": [
         {
           "type": "minecraft:item",
-          "conditions": [
-            {
-              "block": "beachparty:beach_towel",
-              "condition": "minecraft:block_state_property",
-              "properties": {
-                "part": "head"
-              }
+          "condition": {
+            "type": "minecraft:match_block",
+            "blocks": "beachparty:beach_towel",
+            "state": {
+              "part": "head"
             }
-          ],
+          },
           "name": "beachparty:beach_towel"
         }
       ],

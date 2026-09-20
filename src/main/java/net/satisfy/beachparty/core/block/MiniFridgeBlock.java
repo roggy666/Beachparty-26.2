@@ -58,12 +58,7 @@ public class MiniFridgeBlock extends BaseEntityBlock implements EntityBlock {
         super(settings);
     }
 
-    public static final MapCodec<MiniFridgeBlock> CODEC = simpleCodec(MiniFridgeBlock::new);
 
-    @Override
-    protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
-    }
 
     @Override
     public @NotNull VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {

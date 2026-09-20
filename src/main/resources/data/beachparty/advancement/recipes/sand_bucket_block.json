@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "beachparty:empty_sand_bucket"
+        "recipes": "beachparty:empty_sand_bucket"
       }
     }
   },

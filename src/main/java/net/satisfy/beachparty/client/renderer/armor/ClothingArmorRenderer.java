@@ -77,7 +77,7 @@ public class ClothingArmorRenderer implements ArmorRenderer {
 
     private static void submit(PoseStack poseStack, SubmitNodeCollector collector, HumanoidRenderState state, int light, HumanoidModel<HumanoidRenderState> contextModel, ClothingModel model, Identifier texture, int color) {
         ArmorRenderer.submitTransformCopyingModel(contextModel, state, model, state, true, collector, poseStack,
-                RenderTypes.armorCutoutNoCull(texture), light, OverlayTexture.NO_OVERLAY, color, null, state.outlineColor, null);
+                RenderTypes.armorCutoutNoCull(texture), light, OverlayTexture.NO_OVERLAY, color, null, state.outlineColor);
     }
 
     @Override

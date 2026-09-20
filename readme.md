@@ -1,6 +1,28 @@
+# [Let's Do] Beachparty — Fabric 26.3 (Unofficial Port)
+
 ![Beachparty](https://lets-do.ch/assets/mod-logos/beachparty.webp)
 
-<br>
+> [!NOTE]
+> **Official Release & Credits:**
+> This is an unofficial community port. The original mod is created and maintained by **satisfy** and the Let's Do team.  
+> Official Release: [CurseForge](https://www.curseforge.com/minecraft/mc-mods/lets-do-beachparty) | Source: [GitHub (Let-s-Do-Collection/Beachparty)](https://github.com/Let-s-Do-Collection/Beachparty)
+
+---
+
+## Overview
+
+This repository is an unofficial port of **Beachparty** to **Minecraft 26.3** running natively on the **Fabric Loader** and **Fabric API** (Java 25).
+
+### System & Dependency Requirements
+- **Minecraft:** `26.3`
+- **Java:** `25`
+- **Fabric Loader:** `>= 0.19.0`
+- **Fabric API:** `0.161.0+26.3`
+- **Accessories:** `1.4.3-beta+26.3`
+- **Cloth Config:** `26.3.158`
+- **owo-lib:** `0.13.1+26.3`
+
+---
 
 <p align="center">
   <strong>Sunny Shores & Tropical Vibes</strong>
@@ -10,17 +32,11 @@
   <em>The laid-back chapter of the Let's Do collection</em>
 </p>
 
-<br>
-
 <p align="center">
   <em>"Catch the sun. Feel the breeze."</em>
 </p>
 
-<br>
-
 Get your suncream out, we're going to the beach.
-
-<br>
 
 Beachparty turns your coastline into a vibrant summer escape. Collect stylish trinkets, mix refreshing drinks and build the ultimate seaside hangout.
 

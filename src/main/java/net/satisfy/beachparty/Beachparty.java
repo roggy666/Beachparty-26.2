@@ -8,7 +8,7 @@ import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectionContext;
 import net.fabricmc.fabric.api.biome.v1.BiomeSelectors;
 import net.fabricmc.fabric.api.biome.v1.ModificationPhase;
-import net.fabricmc.fabric.api.registry.StrippableBlockRegistry;
+import net.satisfy.beachparty.core.event.PalmStripping;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.level.levelgen.GenerationStep;
@@ -37,11 +37,10 @@ public class Beachparty implements ModInitializer {
         SoundEventRegistry.init();
         ScreenHandlerTypeRegistry.init();
         RecipeTypeRegistry.init();
-        CompostablesRegistry.init();
         SandyMerchantTrades.init();
 
-        StrippableBlockRegistry.register(ObjectRegistry.PALM_LOG, ObjectRegistry.STRIPPED_PALM_LOG);
-        StrippableBlockRegistry.register(ObjectRegistry.PALM_WOOD, ObjectRegistry.STRIPPED_PALM_WOOD);
+        // composting is an item component and stripping a data-driven axe transformer in 26.3, see PalmStripping
+        PalmStripping.init();
 
         CommonEvents.init();
         BeachpartyAccessories.init();

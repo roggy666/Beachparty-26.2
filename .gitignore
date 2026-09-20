@@ -16,4 +16,20 @@ classes/
 .metadata
 .vscode
 .settings
-*.launch.DS_Store
+*.launch
+.DS_Store
+
+# Notes and temporary markdown files
+*.md
+!readme.md
+!README.md
+!CHANGELOG.md
+!CONTRIBUTING.md
+
+# Datagen cache
+src/generated/resources/.cache/
+
+# Local scripts
+run_client.bat
+run_*.bat
+

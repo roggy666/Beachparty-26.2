@@ -72,10 +72,6 @@ public class PalmCabinetBlock extends BaseEntityBlock {
         return new PalmCabinetBlockEntity(pos, state);
     }
 
-    @Override
-    protected MapCodec<? extends BaseEntityBlock> codec() {
-        return null;
-    }
 
     @Override
     public @NotNull RenderShape getRenderShape(BlockState state) {

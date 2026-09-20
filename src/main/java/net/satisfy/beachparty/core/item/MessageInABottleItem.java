@@ -42,11 +42,11 @@ public class MessageInABottleItem extends BlockItem {
     }
 
     public static ItemStack createMonumentMap(Entity entity) {
-        return createMap(entity, StructureTags.ON_OCEAN_EXPLORER_MAPS, "filled_map.monument", MapDecorationTypes.OCEAN_MONUMENT.value());
+        return createMap(entity, StructureTags.ON_OCEAN_MONUMENT_MAPS, "filled_map.monument", MapDecorationTypes.OCEAN_MONUMENT.value());
     }
 
     public static ItemStack createMansionMap(Entity entity) {
-        return createMap(entity, StructureTags.ON_WOODLAND_EXPLORER_MAPS, "filled_map.mansion", MapDecorationTypes.WOODLAND_MANSION.value());
+        return createMap(entity, StructureTags.ON_WOODLAND_MANSION_MAPS, "filled_map.mansion", MapDecorationTypes.WOODLAND_MANSION.value());
     }
 
     public static ItemStack createShipwreckMap(Entity entity) {

@@ -1,5 +1,7 @@
 package net.satisfy.beachparty.core.block;
 
+import net.minecraft.world.level.block.sounds.AmbientLeavesBlockSoundPlayer;
+import net.minecraft.world.level.block.BonemealSource;
 import com.mojang.serialization.MapCodec;
 
 import net.minecraft.core.BlockPos;
@@ -29,15 +31,10 @@ import net.minecraft.world.level.ScheduledTickAccess;
 public class PalmLeavesBlock extends LeavesBlock implements BonemealableBlock {
     public static final IntegerProperty DISTANCE_9 = IntegerProperty.create("distance_9", 1, 9);
 
-    public static final MapCodec<PalmLeavesBlock> CODEC = simpleCodec(PalmLeavesBlock::new);
 
-    @Override
-    public @NotNull MapCodec<? extends LeavesBlock> codec() {
-        return CODEC;
-    }
 
     public PalmLeavesBlock(Properties properties) {
-        super(0.01F, properties);
+        super(AmbientLeavesBlockSoundPlayer.noAmbientSound(), properties);
         this.registerDefaultState(this.stateDefinition.any().setValue(DISTANCE_9, 9).setValue(PERSISTENT, false).setValue(DISTANCE, 7).setValue(WATERLOGGED, false));
     }
 
@@ -119,24 +116,20 @@ public class PalmLeavesBlock extends LeavesBlock implements BonemealableBlock {
     }
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState) {
+    public boolean isValidBonemealTarget(LevelReader levelReader, BlockPos blockPos, BlockState blockState, BonemealSource source) {
         return levelReader.getBlockState(blockPos.below()).isAir();
     }
 
     @Override
-    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state) {
+    public boolean isBonemealSuccess(Level level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
         return true;
     }
 
     @Override
-    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state) {
+    public void performBonemeal(ServerLevel level, RandomSource random, BlockPos pos, BlockState state, BonemealSource source) {
         if (level.getBlockState(pos.below()).isAir()) {
             level.setBlock(pos.below(), ObjectRegistry.HANGING_COCONUT.defaultBlockState().setValue(HangingCoconutBlock.AGE, 0), 2);
         }
     }
 
-    @Override
-    protected void spawnFallingLeavesParticle(Level level, BlockPos pos, RandomSource random) {
-        // palm fronds don't shed leaf particles
-    }
 }

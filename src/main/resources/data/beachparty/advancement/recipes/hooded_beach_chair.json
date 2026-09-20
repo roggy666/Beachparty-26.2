@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "beachparty:hooded_beach_chair"
+        "recipes": "beachparty:hooded_beach_chair"
       }
     }
   },

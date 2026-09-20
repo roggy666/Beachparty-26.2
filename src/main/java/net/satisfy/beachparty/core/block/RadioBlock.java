@@ -57,12 +57,7 @@ public class RadioBlock extends BaseEntityBlock {
         this.registerDefaultState(this.stateDefinition.any().setValue(ON, false).setValue(SEARCHING, false).setValue(FACING, Direction.NORTH));
     }
 
-    public static final MapCodec<RadioBlock> CODEC = simpleCodec(RadioBlock::new);
 
-    @Override
-    protected @NotNull MapCodec<? extends BaseEntityBlock> codec() {
-        return CODEC;
-    }
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {

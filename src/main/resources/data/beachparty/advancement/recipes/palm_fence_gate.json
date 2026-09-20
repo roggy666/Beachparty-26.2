@@ -21,7 +21,7 @@
     "has_the_recipe": {
       "trigger": "minecraft:recipe_unlocked",
       "conditions": {
-        "recipe": "beachparty:palm_fence_gate"
+        "recipes": "beachparty:palm_fence_gate"
       }
     }
   },
